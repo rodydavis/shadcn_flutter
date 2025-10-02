@@ -383,19 +383,21 @@ class _PhoneInputState extends State<PhoneInput>
                 children: [
                   CountryFlag.fromCountryCode(
                     item.code,
-                    shape: styleValue(
-                      defaultValue: RoundedRectangle(
-                        theme.radiusSm,
+                    theme: ImageTheme(
+                      shape: styleValue(
+                        defaultValue: RoundedRectangle(
+                          theme.radiusSm,
+                        ),
+                        themeValue: componentTheme?.flagShape,
                       ),
-                      themeValue: componentTheme?.flagShape,
-                    ),
-                    height: styleValue(
-                      defaultValue: theme.scaling * 18,
-                      themeValue: componentTheme?.flagHeight,
-                    ),
-                    width: styleValue(
-                      defaultValue: theme.scaling * 24,
-                      themeValue: componentTheme?.flagWidth,
+                      height: styleValue(
+                        defaultValue: theme.scaling * 18,
+                        themeValue: componentTheme?.flagHeight,
+                      ),
+                      width: styleValue(
+                        defaultValue: theme.scaling * 24,
+                        themeValue: componentTheme?.flagWidth,
+                      ),
                     ),
                   ),
                   Gap(
@@ -427,20 +429,22 @@ class _PhoneInputState extends State<PhoneInput>
                           children: [
                             CountryFlag.fromCountryCode(
                               country.code,
-                              shape: styleValue(
-                                defaultValue: RoundedRectangle(
-                                  theme.radiusSm,
+                             theme: ImageTheme(
+                               shape: styleValue(
+                                  defaultValue: RoundedRectangle(
+                                    theme.radiusSm,
+                                  ),
+                                  themeValue: componentTheme?.flagShape,
                                 ),
-                                themeValue: componentTheme?.flagShape,
-                              ),
-                              height: styleValue(
-                                defaultValue: theme.scaling * 18,
-                                themeValue: componentTheme?.flagHeight,
-                              ),
-                              width: styleValue(
-                                defaultValue: theme.scaling * 24,
-                                themeValue: componentTheme?.flagWidth,
-                              ),
+                                height: styleValue(
+                                  defaultValue: theme.scaling * 18,
+                                  themeValue: componentTheme?.flagHeight,
+                                ),
+                                width: styleValue(
+                                  defaultValue: theme.scaling * 24,
+                                  themeValue: componentTheme?.flagWidth,
+                                ),
+                             ),
                             ),
                             Gap(
                               styleValue(

@@ -11,12 +11,12 @@ environment:
   flutter: ">=3.35.1"
 
 dependencies:
-  email_validator: ^3.0.0
   flutter:
     sdk: flutter
+  email_validator: ^3.0.0
   skeletonizer: ^2.1.0+1
-  syntax_highlight: ^0.5.0
-  country_flags: ^3.3.0
+  # syntax_highlight: ^0.5.0
+  country_flags: ^4.0.1
   phonecodes: ^0.0.4
   cross_file: ^0.3.4+2
   image: ^4.2.0
@@ -28,7 +28,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^6.0.0
   icon_font_generator: ^4.0.0
   archive: any
 
