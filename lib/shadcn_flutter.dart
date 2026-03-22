@@ -23,6 +23,7 @@ export 'package:flutter/widgets.dart'
         TableRow,
         TableCell,
         FormField,
+        RepeatMode,
         RadioGroup;
 // bundle from gap
 export 'package:gap/gap.dart';
