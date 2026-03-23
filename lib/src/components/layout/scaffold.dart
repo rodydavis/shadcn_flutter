@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'dart:math' as math;
 
 import 'package:flutter/rendering.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart';
@@ -285,9 +286,12 @@ class ScaffoldState extends State<Scaffold> {
   }
 
   Widget _buildContent(BuildContext context) {
-    final theme = Theme.of(context);
-    final compTheme = ComponentTheme.maybeOf<ScaffoldTheme>(context);
-    final viewInsets = MediaQuery.viewInsetsOf(context);
+    var theme = Theme.of(context);
+    var compTheme = ComponentTheme.maybeOf<ScaffoldTheme>(context);
+    var currentMediaQuery = MediaQuery.of(context);
+    var viewInsets = currentMediaQuery.viewInsets;
+    var basePadding = currentMediaQuery.padding;
+
     return DrawerOverlay(
       child: Container(
         color: widget.backgroundColor ??
@@ -307,9 +311,13 @@ class ScaffoldState extends State<Scaffold> {
                         bottom: viewInsets.bottom,
                       ),
                       child: MediaQuery(
-                        data: MediaQuery.of(context).copyWith(
+                        data: currentMediaQuery.copyWith(
                           viewInsets: viewInsets.copyWith(
                             bottom: 0,
+                          ),
+                          padding: basePadding.copyWith(
+                            bottom: math.max(
+                                0.0, basePadding.bottom - viewInsets.bottom),
                           ),
                         ),
                         child: ToastLayer(child: widget.child),
